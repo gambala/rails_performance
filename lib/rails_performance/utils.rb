@@ -40,7 +40,7 @@ module RailsPerformance
     end
 
     def Utils.days
-      (RP.duration % 24.days).parts[:days] + 1
+      ActiveSupport::Duration.build(RP.duration % 24.days).parts[:days] + 1
     end
 
     def Utils.median(array)
